@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_id: 1
+  car_name: MyString
+  car_model: MyString
+  car_detail: MyString
+  seller_name: MyString
+  issue_year: 1
+  car_condition: MyString
+  car_image: MyText
+
+two:
+  car_id: 1
+  car_name: MyString
+  car_model: MyString
+  car_detail: MyString
+  seller_name: MyString
+  issue_year: 1
+  car_condition: MyString
+  car_image: MyText
