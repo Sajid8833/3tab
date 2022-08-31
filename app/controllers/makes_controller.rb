@@ -65,6 +65,6 @@ class MakesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def make_params
-      params.require(:make).permit(:make_id, :make_type)
+      params.require(:make).permit(:name)
     end
 end

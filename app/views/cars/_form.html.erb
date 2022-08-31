@@ -1,7 +1,7 @@
 <%= form_with(model: car) do |form| %>
   <% if car.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+    <div style="color: black">
+      <h2><%= pluralize(car.errors.count, "error") %> Please Add All Fields:</h2>
 
       <ul>
         <% car.errors.each do |error| %>
@@ -10,30 +10,36 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :car_id, style: "display: block" %>
-    <%= form.number_field :car_id %>
+<div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :car_name, style: "display: block" %>
-    <%= form.text_field :car_name %>
+    <%= form.label :model, style: "display: block" %>
+    <%= form.text_field :model %>
   </div>
-
   <div>
-    <%= form.label :car_model, style: "display: block" %>
-    <%= form.text_field :car_model %>
-  </div>
-
-  <div>
-    <%= form.label :car_detail, style: "display: block" %>
-    <%= form.text_field :car_detail %>
+    <%= form.label :details, style: "display: block" %>
+    <%= form.text_field :details %>
   </div>
 
   <div>
     <%= form.label :seller_name, style: "display: block" %>
     <%= form.text_field :seller_name %>
+  </div>
+  <div>
+    <%= form.label :category_id, "Select Category", style: "display: block" %>
+    <%= form.select :category_id,  options_from_collection_for_select(Category.all, :id, :name, form.object.category_id) %>
+  </div>
+  <div>
+    <%= form.label :city_id, "Select City" , style: "display: block" %>
+    <%= form.select :city_id,  options_from_collection_for_select(City.all, :id, :name, form.object.city_id) %>
+  </div>
+
+  <div>
+    <%= form.label :make_id, "Select Make", style: "display: block" %>
+    <%= form.select :make_id,  options_from_collection_for_select(Make.all, :id, :name, form.object.make_id) %>
   </div>
 
   <div>
@@ -42,13 +48,13 @@
   </div>
 
   <div>
-    <%= form.label :car_condition, style: "display: block" %>
-    <%= form.text_field :car_condition %>
+    <%= form.label :condition, style: "display: block" %>
+    <%= form.text_field :condition %>
   </div>
 
   <div>
-    <%= form.label :car_image, style: "display: block" %>
-    <%= form.text_area :car_image %>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_area :image %>
   </div>
 
   <div>
